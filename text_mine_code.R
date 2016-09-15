@@ -20,3 +20,11 @@
 > corpus <- tm_map(corpus, removePunctuation)
 > corpus <- tm_map(corpus, stripWhitespace)
 > corpus <- tm_map(corpus, removeWords, stopwords("English"))
+>dtm <- DocumentTermMatrix(corpus)
+>dtm2 <- as.matrix(dtm)
+>frequency <- colSums(dtm2)
+>frequency <- sort(frequency, decreasing=TRUE)
+
+
+
+
